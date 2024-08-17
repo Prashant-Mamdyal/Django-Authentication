@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registeration</title>
+</head>
+<body>
+    <form action="{% url 'register' %}" method="post">
+
+        {% csrf_token %}
+
+        <input type="text" name="first_name" placeholder="First Name"><br> 
+        <input type="text" name="last_name" placeholder="Last Name"><br>
+        <input type="text" name="username" placeholder="Username"><br>
+        <input type="email" name="email" placeholder="Email"><br>
+        <input type="password" name="password1" placeholder="Password"><br>
+        <input type="password" name="password2" placeholder="Confirm Password"><br>
+        <button type="submit">Register</button>
+        <a href="{% url 'login' %}">Login</a>                                         
+    </form>
+
+    <div>
+        {% for message in messages %}
+        <h4>{{ message }}</h4>
+        {% endfor %}
+    </div>                             
+
+
+    <!-- <form action="{% url 'register' %}" method="post">
+
+        {% csrf_token %}
+
+        {{ form.username.errors }}
+        <label for="{{ form.username.id_for_label }}">Username:</label><br>
+        {{ form.username }}<br>
+
+        {{ form.password1.errors }}
+        <label for="{{ form.password1.id_for_label }}">Password:</label><br>
+        {{ form.password1 }}<br>
+
+        {{ form.password2.errors }}
+        <label for="{{ form.password2.id_for_label }}">Confirm Password:</label><br>
+        {{ form.password2 }}<br>
+
+        <button type="submit">Register</button>
+        <a href="{% url 'login' %}">Login</a>
+        
+    </form> -->
+
+</body>
+</html>
