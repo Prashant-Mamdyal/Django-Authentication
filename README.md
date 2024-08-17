@@ -1,0 +1,1 @@
+Implementing Django register, login and logout method.
